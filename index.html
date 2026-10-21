@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Flower Shop | Tiệm Hoa Tươi Thiết Kế & Quà Tặng Tinh Tế</title>
+  <meta name="description" content="Bloom Flower Shop - Gói trọn yêu thương, gửi trao cảm xúc qua từng bó hoa tươi thiết kế hiện đại. GIAO HỎA TỐC 2H NỘI THÀNH, tặng thiệp viết tay.">
+
+  <!-- Google Fonts: Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Configuration: Nền Trắng, Chủ đạo tiếp theo là Hồng Sữa -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hong-sua': '#FDF0F3',         // Màu Hồng sữa nền chính nổi bật
+            'hong-sua-subtle': '#FFF7F8',  // Hồng sữa rất nhạt cho section xen kẽ
+            'hong-sua-card': '#FEF4F6',    // Nền hồng sữa cho card sản phẩm
+            'hong-sua-medium': '#F9D5DC',  // Hồng sữa chuyển màu
+            'hong-sua-dam': '#F2B9C4',     // Hồng sữa nhấn mạnh, huy hiệu
+            'hong-sua-border': '#F6CAD3',  // Viền hồng sữa trang nhã
+            'xanh-la': '#78966B',          // Xanh lá dịu thiên nhiên
+            'xanh-la-dark': '#5D7752',     // Hover nút bấm
+            'xanh-la-light': '#EEF5ED',    // Nền nhạt xanh lá
+            'nau-tram': '#51463F',         // Màu chữ nâu trầm ấm áp, quý phái
+            'nau-tram-light': '#7E726B',   // Màu chữ phụ
+            'champagne': '#C9A86A',        // Vàng champagne điểm xuyết
+            'champagne-light': '#F8F1E3'   // Champagne nhạt
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 8px 30px rgba(242, 185, 196, 0.15)',
+            'card': '0 12px 35px rgba(81, 70, 63, 0.06)',
+            'hover': '0 20px 40px rgba(242, 185, 196, 0.28)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Thanh cuộn phong cách Hồng sữa - Nâu trầm */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFFFFF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F2B9C4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #78966B;
+    }
+    .badge-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-nau-tram font-sans antialiased min-h-screen selection:bg-hong-sua-dam selection:text-nau-tram">
+
+  <!-- ========================================================
+       TOP ANNOUNCEMENT BAR (ƯU ĐÃI NHANH TRÊN CÙNG)
+  ======================================================== -->
+  <div class="bg-hong-sua border-b border-hong-sua-border text-nau-tram text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+      <div class="flex items-center gap-2 justify-center">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-hong-sua-dam animate-pulse"></span>
+        <span>🌸 <strong>Mùa hoa yêu thương:</strong> Giảm 10% đơn đặt trước & Tặng thiệp viết tay</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <!-- Chữ 'GIAO HỎA TỐC 2H NỘI THÀNH' viết CAPSLOCK theo yêu cầu -->
+        <span class="hidden md:inline tracking-wider text-xanh-la-dark">GIAO HỎA TỐC 2H NỘI THÀNH</span>
+        <a href="#offer-section" class="text-xanh-la hover:text-xanh-la-dark underline font-bold transition-colors">Nhận mã ưu đãi ngay</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       STICKY NAVIGATION BAR (NỀN TRẮNG TINH KHÔI)
+  ======================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hong-sua-border transition-all duration-300 shadow-sm" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO AREA (Logo Bloom Flower Shop giữ nguyên hình hoa hồng, chữ trắng, nền xanh đậm trong khung tròn sang trọng) -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-champagne shadow-md group-hover:scale-105 transition-transform duration-300 flex-shrink-0 bg-[#0c4333]">
+          <img src="./logo cửa hàng.png" alt="Bloom Flower Shop Logo" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg sm:text-xl tracking-tight text-nau-tram uppercase group-hover:text-xanh-la transition-colors">
+            Bloom Flower Shop
+          </span>
+          <span class="text-xs text-nau-tram-light font-normal tracking-wide flex items-center gap-1">
+            <span>Hoa Tươi Thiết Kế</span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-hong-sua-dam"></span>
+            <span>Tinh Tế & Hiện Đại</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION LINKS -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-nau-tram">
+        <a href="#hero" class="hover:text-xanh-la transition-colors py-1">Trang Chủ</a>
+        <a href="#why-choose-us" class="hover:text-xanh-la transition-colors py-1">Về Chúng Tôi</a>
+        <a href="#products-section" class="hover:text-xanh-la transition-colors py-1">Danh Mục Hoa</a>
+        <a href="#offer-section" class="hover:text-xanh-la transition-colors py-1 flex items-center gap-1.5">
+          <span>Ưu Đãi</span>
+          <span class="bg-hong-sua-dam text-nau-tram text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">HOT</span>
+        </a>
+        <a href="#testimonials" class="hover:text-xanh-la transition-colors py-1">Khách Hàng Nói Gì</a>
+        <a href="#faq-trust" class="hover:text-xanh-la transition-colors py-1">Chính Sách</a>
+      </nav>
+
+      <!-- ACTION BUTTONS: CART & FAST CONTACT -->
+      <div class="flex items-center gap-3">
+        <!-- Nút Giỏ hàng -->
+        <button id="open-cart-btn" class="relative p-2.5 rounded-full bg-hong-sua hover:bg-hong-sua-medium transition-colors text-nau-tram flex items-center justify-center border border-hong-sua-border" aria-label="Giỏ hàng">
+          <svg class="w-5 h-5 text-nau-tram" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span id="cart-counter" class="absolute -top-1 -right-1 bg-hong-sua-dam text-nau-tram text-xs w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-sm border border-white">
+            0
+          </span>
+        </button>
+
+        <!-- CTA Nhanh trên Header -->
+        <a href="#products-section" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-xanh-la text-white text-sm font-medium rounded-full hover:bg-xanh-la-dark transition-all duration-200 shadow-sm">
+          <span>Chọn Hoa Ngay</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <!-- Nút Menu Điện thoại (Mobile Hamburger) -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-nau-tram hover:bg-hong-sua focus:outline-none" aria-label="Mở menu">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-hong-sua-border px-4 pt-3 pb-6 space-y-3 transition-all duration-300">
+      <a href="#hero" class="mobile-link block py-2 text-base font-medium text-nau-tram border-b border-hong-sua">Trang Chủ</a>
+      <a href="#why-choose-us" class="mobile-link block py-2 text-base font-medium text-nau-tram border-b border-hong-sua">Về Bloom Flower Shop</a>
+      <a href="#products-section" class="mobile-link block py-2 text-base font-medium text-nau-tram border-b border-hong-sua">Danh Mục Hoa Tươi</a>
+      <a href="#offer-section" class="mobile-link block py-2 text-base font-medium text-nau-tram border-b border-hong-sua flex justify-between items-center">
+        <span>Ưu Đãi Hôm Nay</span>
+        <span class="bg-hong-sua-dam text-nau-tram text-xs font-bold px-2 py-0.5 rounded-full">GIẢM 10%</span>
+      </a>
+      <a href="#testimonials" class="mobile-link block py-2 text-base font-medium text-nau-tram border-b border-hong-sua">Đánh Giá Từ Khách Hàng</a>
+      <a href="#faq-trust" class="mobile-link block py-2 text-base font-medium text-nau-tram">Chính Sách & Giao Hàng</a>
+      
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="#products-section" class="mobile-link w-full text-center py-2.5 bg-xanh-la text-white rounded-xl font-medium shadow-sm">Đặt Hoa Trực Tiếp</a>
+        <div class="grid grid-cols-2 gap-2 text-center text-xs">
+          <!-- Thay thế Shopee bằng Facebook theo yêu cầu -->
+          <a href="https://www.facebook.com/share/1CngHqxkvD/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-xl font-medium">Fanpage Facebook</a>
+          <a href="https://www.tiktok.com/@tiemhoabloom_?_r=1&_t=ZS-9AjHXBlMNCm" target="_blank" rel="noopener noreferrer" class="py-2 bg-slate-900 text-white rounded-xl font-medium">TikTok Shop</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       1. HERO SECTION (Thu hút chú ý trong 3 giây đầu – Attention)
+  ======================================================== -->
+  <section id="hero" class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-white">
+    <!-- Họa tiết đốm mờ Hồng Sữa mềm mại -->
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-hong-sua-dam/35 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-hong-sua rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- CỘT NỘI DUNG (LEFT: 7 COLS) -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Brand Badge Hồng Sữa Thẩm Mỹ -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-hong-sua border border-hong-sua-border text-xs sm:text-sm font-medium text-nau-tram shadow-sm mx-auto lg:mx-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-hong-sua-dam"></span>
+            <span>Tiệm hoa tươi thiết kế phong cách hiện đại & thanh lịch</span>
+          </div>
+
+          <!-- Tiêu đề chính H1: GÓI TRỌN YÊU THƯƠNG, GỬI TRAO CẢM XÚC - TONE MÀU NÂU TRẦM THEO ĐÚNG YÊU CẦU -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-nau-tram leading-tight tracking-tight uppercase">
+            GÓI TRỌN YÊU THƯƠNG,<br class="hidden sm:inline"> GỬI TRAO CẢM XÚC
+          </h1>
+
+          <!-- Tiêu đề phụ -->
+          <p class="text-base sm:text-lg text-nau-tram-light leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+            Tại <strong>Bloom Flower Shop</strong>, mỗi bó hoa là một tác phẩm được tuyển chọn thủ công từng bông sớm mai, gói ghém chỉn chu trong giấy lụa thanh tao và giao hỏa tốc tận tay để trọn vẹn từng khoảnh khắc ý nghĩa.
+          </p>
+
+          <!-- Điểm khác biệt cốt lõi tóm tắt (3 bullet pills Hồng Sữa) -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 pt-1 text-xs sm:text-sm text-nau-tram font-medium">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-hong-sua rounded-full border border-hong-sua-border">
+              <svg class="w-4 h-4 text-xanh-la" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Hoa tươi loại 1 mỗi sáng
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-hong-sua rounded-full border border-hong-sua-border">
+              <svg class="w-4 h-4 text-xanh-la" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Gói hoa thủ công phong cách Hàn & Âu
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-hong-sua rounded-full border border-hong-sua-border">
+              <svg class="w-4 h-4 text-xanh-la" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Chụp ảnh xác nhận trước khi giao
+            </span>
+          </div>
+
+          <!-- Nhóm nút Kêu Gọi Hành Động (CTA Group) -->
+          <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+            <!-- CTA Chính: Khám Phá Những Bó Hoa -->
+            <a href="#products-section" class="w-full sm:w-auto px-7 py-3.5 bg-xanh-la text-white font-semibold rounded-full hover:bg-xanh-la-dark shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-base">
+              <span>Khám Phá Những Bó Hoa</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </a>
+
+            <!-- CTA Phụ: Đặt Hoa Theo Yêu Cầu / Tư Vấn Nhanh -->
+            <button onclick="openCustomOrderModal()" class="w-full sm:w-auto px-6 py-3.5 bg-hong-sua text-nau-tram font-medium rounded-full border border-hong-sua-border hover:bg-hong-sua-medium transition-all duration-200 flex items-center justify-center gap-2 text-base">
+              <span>Đặt Hoa Thiết Kế Riêng</span>
+              <span class="text-xs text-nau-tram font-bold bg-white px-2 py-0.5 rounded-full border border-hong-sua-border">Tư vấn 24/7</span>
+            </button>
+          </div>
+
+          <!-- Micro-Trust Cues với CAPSLOCK 'GIAO HỎA TỐC 2H NỘI THÀNH' -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-nau-tram-light border-t border-hong-sua-border">
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-xanh-la" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <strong class="text-nau-tram tracking-wide">GIAO HỎA TỐC 2H NỘI THÀNH</strong>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-hong-sua-dam" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+              <span>Tặng kèm thiệp & túi giữ tươi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CỘT HÌNH ẢNH BANNER BỘ SƯU TẬP SIGNATURE: ĐỔI SANG ẢNH 'bó hoa hồng màu hồng.jpg' VÀ GIÁ 600.000đ -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <div class="overflow-hidden rounded-3xl shadow-hover border-4 border-white bg-hong-sua aspect-[4/5] relative group">
+              <!-- Sử dụng hình 'bó hoa hồng màu hồng.jpg' trong thư mục theo yêu cầu -->
+              <img 
+                src="./bó hoa hồng màu hồng.jpg" 
+                alt="Bộ sưu tập Signature - Đóa Hoa Hồng Màu Hồng Bloom Flower Shop" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              >
+              
+              <!-- Gradient bóng nhẹ đáy ảnh -->
+              <div class="absolute inset-0 bg-gradient-to-t from-nau-tram/60 via-transparent to-transparent"></div>
+
+              <!-- Thẻ thông tin nhanh trên ảnh: Đổi giá thành 600.000đ -->
+              <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 badge-blur border border-hong-sua-border shadow-md">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-xanh-la font-bold">Bộ sưu tập Signature</span>
+                    <h2 class="text-sm font-bold text-nau-tram">Bó Hoa Hồng Màu Hồng</h2>
+                  </div>
+                  <!-- Đổi giá 580.000 thành 600.000đ theo yêu cầu -->
+                  <span class="text-sm font-bold text-nau-tram bg-hong-sua px-3 py-1 rounded-full border border-hong-sua-border">
+                    600.000đ
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- HUY HIỆU LOGO BLOOM FLOWER SHOP: Nền xanh đậm nguyên bản đặt trong khung tròn viền champagne sang trọng -->
+            <div class="absolute -top-5 -left-4 sm:-left-6 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shadow-xl border-3 border-white bg-[#0c4333] transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+              <img src="./logo cửa hàng.png" alt="Logo Bloom Flower Shop" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Tag cam kết hoa tươi trôi nổi bên góc phải -->
+            <div class="absolute -bottom-4 -right-2 sm:-right-4 bg-white px-4 py-2.5 rounded-2xl shadow-lg border border-hong-sua-border flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-hong-sua-dam/30 flex items-center justify-center text-nau-tram font-bold">
+                ✓
+              </div>
+              <div class="text-left text-xs">
+                <p class="font-bold text-nau-tram">Hoa Cắt Trong Ngày</p>
+                <p class="text-nau-tram-light">Độ bền tự nhiên 3-7 ngày</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. SOCIAL PROOF & SERVICE HUY HIỆU (NỀN HỒNG SỮA NHẸ NHÀNG)
+  ======================================================== -->
+  <section id="trust-badges" class="py-12 bg-hong-sua-subtle border-y border-hong-sua-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 4 HUY HIỆU CHẤT LƯỢNG DỊCH VỤ CỐT LÕI TRÊN NỀN TRẮNG KẾT HỢP HỒNG SỮA -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+        
+        <!-- Huy hiệu 1: Hoa tuyển chọn -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3.5 p-4 rounded-2xl bg-white border border-hong-sua-border shadow-soft hover:shadow-hover transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-hong-sua text-xanh-la flex items-center justify-center flex-shrink-0 shadow-sm border border-hong-sua-border">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-nau-tram">Hoa Tuyển Chọn Kỹ Càng</h3>
+            <p class="text-xs text-nau-tram-light mt-0.5">Từng cành hoa chọn lọc sáng sớm, tươi lâu và đều cánh.</p>
+          </div>
+        </div>
+
+        <!-- Huy hiệu 2: Thiết kế chỉn chu -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3.5 p-4 rounded-2xl bg-white border border-hong-sua-border shadow-soft hover:shadow-hover transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-hong-sua text-nau-tram flex items-center justify-center flex-shrink-0 shadow-sm border border-hong-sua-border">
+            <svg class="w-6 h-6 text-nau-tram" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-nau-tram">Gói Hoa Tinh Tế & Thẩm Mỹ</h3>
+            <p class="text-xs text-nau-tram-light mt-0.5">Giấy lụa nhập khẩu, phối màu trang nhã theo phong cách hiện đại.</p>
+          </div>
+        </div>
+
+        <!-- Huy hiệu 3: Giao đúng hẹn & CAPSLOCK GIAO HỎA TỐC 2H NỘI THÀNH -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3.5 p-4 rounded-2xl bg-white border border-hong-sua-border shadow-soft hover:shadow-hover transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-hong-sua text-champagne flex items-center justify-center flex-shrink-0 shadow-sm border border-hong-sua-border">
+            <svg class="w-6 h-6 text-nau-tram" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-nau-tram">GIAO HỎA TỐC 2H NỘI THÀNH</h3>
+            <p class="text-xs text-nau-tram-light mt-0.5">Đúng giờ hẹn, bảo quản bằng túi xốp dưỡng ẩm suốt quãng đường.</p>
+          </div>
+        </div>
+
+        <!-- Huy hiệu 4: Chụp ảnh xác nhận -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3.5 p-4 rounded-2xl bg-white border border-hong-sua-border shadow-soft hover:shadow-hover transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-hong-sua text-xanh-la flex items-center justify-center flex-shrink-0 shadow-sm border border-hong-sua-border">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-nau-tram">Chụp Ảnh Xác Nhận Mẫu</h3>
+            <p class="text-xs text-nau-tram-light mt-0.5">Khách hàng duyệt ảnh bó hoa thực tế trước khi nhân viên xuất phát đi giao.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KHUNG MINH CHỨNG THỰC TẾ & MẪU ĐÁNH GIÁ -->
+      <div id="testimonials" class="mt-12 pt-8 border-t border-hong-sua-border">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs uppercase font-bold tracking-wider text-nau-tram">Cảm Nhận Từ Trái Tim Khách Hàng</span>
+          <h2 class="text-2xl font-bold text-nau-tram mt-1">Niềm Tin Trao Gửi Cùng Bloom</h2>
+          <p class="text-xs text-nau-tram-light mt-1">Các phản hồi thực tế từ những khách hàng đã trao gửi yêu thương cùng Bloom Flower Shop.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Phản hồi mẫu 1 -->
+          <div class="p-6 rounded-2xl bg-white border border-hong-sua-border shadow-soft relative">
+            <div class="flex items-center gap-1 text-champagne mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-nau-tram-light ml-1 font-semibold">5.0</span>
+            </div>
+            <p class="text-sm text-nau-tram italic leading-relaxed">
+              "Mình đặt bó tulip mừng sinh nhật bạn thân vào phút chót mà tiệm chuẩn bị nhanh và gói hoa rất sang. Bó hoa thực tế giống y hệt hình tư vấn, bạn mình thích lắm!"
+            </p>
+            <div class="mt-4 pt-3 border-t border-hong-sua flex items-center justify-between text-xs">
+              <span class="font-bold text-nau-tram">Hoàng My</span>
+              <span class="text-nau-tram-light bg-hong-sua px-2 py-0.5 rounded border border-hong-sua-border">Bó Tulip Hà Lan</span>
+            </div>
+          </div>
+
+          <!-- Phản hồi mẫu 2 -->
+          <div class="p-6 rounded-2xl bg-white border border-hong-sua-border shadow-soft relative">
+            <div class="flex items-center gap-1 text-champagne mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-nau-tram-light ml-1 font-semibold">5.0</span>
+            </div>
+            <p class="text-sm text-nau-tram italic leading-relaxed">
+              "Rất thích cách Bloom Flower Shop chụp ảnh xác nhận trước khi giao. Thiệp viết tay nét chữ rất đẹp, hoa được bọc túi giữ ẩm cẩn thận nên đến nơi hoa vẫn còn đọng sương."
+            </p>
+            <div class="mt-4 pt-3 border-t border-hong-sua flex items-center justify-between text-xs">
+              <span class="font-bold text-nau-tram">Minh Quân</span>
+              <span class="text-nau-tram-light bg-hong-sua px-2 py-0.5 rounded border border-hong-sua-border">Hoa Hồng Đỏ Kỷ Niệm</span>
+            </div>
+          </div>
+
+          <!-- Phản hồi mẫu 3 -->
+          <div class="p-6 rounded-2xl bg-white border border-hong-sua-border shadow-soft relative">
+            <div class="flex items-center gap-1 text-champagne mb-3">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-nau-tram-light ml-1 font-semibold">5.0</span>
+            </div>
+            <p class="text-sm text-nau-tram italic leading-relaxed">
+              "Màu sắc phối nhã nhặn, không bị sến. Mình đã đặt hoa ở đây nhiều lần vào các dịp kỷ niệm và lúc nào cũng an tâm về chất lượng hoa lẫn thái độ tư vấn nhiệt tình."
+            </p>
+            <div class="mt-4 pt-3 border-t border-hong-sua flex items-center justify-between text-xs">
+              <span class="font-bold text-nau-tram">Thu Trang</span>
+              <span class="text-nau-tram-light bg-hong-sua px-2 py-0.5 rounded border border-hong-sua-border">Bó Hoa Ly Trắng</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner thông tin số liệu minh bạch -->
+        <div class="mt-6 p-4 rounded-xl bg-white border border-hong-sua-border text-center text-xs text-nau-tram-light flex flex-wrap items-center justify-center gap-6 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-xanh-la"></span>
+            <span><strong>Chỉ số phục vụ:</strong> Khách hàng đánh giá hài lòng sau khi nhận hoa</span>
+          </div>
+          <div>
+            <span>Đánh giá trung bình: <strong class="text-nau-tram">4.9 / 5.0 ★</strong></span>
+          </div>
+          <div>
+            <span>Tốc độ phản hồi: <strong class="text-nau-tram">Dưới 15 phút</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. FEATURES / BENEFITS (3 TRỤ CỘT GIÁ TRỊ CỐT LÕI)
+  ======================================================== -->
+  <section id="why-choose-us" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase font-bold tracking-wider text-nau-tram bg-hong-sua px-3 py-1 rounded-full border border-hong-sua-border">Trải Nghiệm Đẳng Cấp Từ Từng Nhành Hoa</span>
+        <h2 class="text-3xl font-extrabold text-nau-tram mt-2">3 Trụ Cột Giá Trị Cốt Lõi Tại Bloom</h2>
+        <p class="text-sm text-nau-tram-light mt-2">Chúng tôi không chỉ trao đi một bó hoa, chúng tôi gửi gắm sự chăm chút và cảm xúc trọn vẹn nhất của bạn tới người nhận.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- TRỤ CỘT 1: Hoa tươi tuyển chọn -->
+        <div class="bg-hong-sua-card p-8 rounded-3xl border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-white text-xanh-la flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-sm border border-hong-sua-border">
+              🌿
+            </div>
+            <h3 class="text-xl font-bold text-nau-tram mb-3">Hoa Tươi Được Tuyển Chọn</h3>
+            <p class="text-sm text-nau-tram-light leading-relaxed">
+              Những đóa hoa có màu sắc tự nhiên, form hoa đều đặn, cánh dày dặn không dập nát. Bloom nhập mới hoa tươi mỗi sáng từ các nông trại tiêu chuẩn cao tại Đà Lạt và nguồn hoa nhập khẩu thịnh hành.
+            </p>
+          </div>
+          <ul class="mt-6 pt-4 border-t border-hong-sua-border space-y-2 text-xs text-nau-tram">
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Giữ độ tươi bền từ 3 - 7 ngày
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Xử lý gốc và dưỡng hoa trước khi cắm
+            </li>
+          </ul>
+        </div>
+
+        <!-- TRỤ CỘT 2: Thiết kế và gói hoa tinh tế -->
+        <div class="bg-hong-sua-card p-8 rounded-3xl border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group border-t-4 border-t-hong-sua-dam">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-white text-nau-tram flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-sm border border-hong-sua-border">
+              🎀
+            </div>
+            <h3 class="text-xl font-bold text-nau-tram mb-3">Thiết Kế & Gói Hoa Tinh Tế</h3>
+            <p class="text-sm text-nau-tram-light leading-relaxed">
+              Tỉ mỉ từ cách phối màu hài hòa đến chọn lựa giấy gói lụa thanh lịch, ruy băng voan mềm mại. Mỗi sản phẩm được hoàn thiện như một tác phẩm nghệ thuật, tạo dấu ấn thị giác sang trọng nhưng gần gũi.
+            </p>
+          </div>
+          <ul class="mt-6 pt-4 border-t border-hong-sua-border space-y-2 text-xs text-nau-tram">
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Phong cách cắm hiện đại kiểu Hàn & Pháp
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Chăm chút thiệp viết tay theo thông điệp riêng
+            </li>
+          </ul>
+        </div>
+
+        <!-- TRỤ CỘT 3: Hoa phù hợp nhiều dịp -->
+        <div class="bg-hong-sua-card p-8 rounded-3xl border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-white text-nau-tram flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-sm border border-hong-sua-border">
+              🎉
+            </div>
+            <h3 class="text-xl font-bold text-nau-tram mb-3">Hoa Phù Hợp Cho Mọi Dịp</h3>
+            <p class="text-sm text-nau-tram-light leading-relaxed">
+              Dù là sinh nhật, ngày kỷ niệm ngọt ngào, lễ tốt nghiệp rạng rỡ, lời cảm ơn chân thành hay đơn giản là tự thưởng một bó hoa xinh để thắp sáng không gian sống - Bloom đều có mẫu hoa hoàn hảo cho bạn.
+            </p>
+          </div>
+          <ul class="mt-6 pt-4 border-t border-hong-sua-border space-y-2 text-xs text-nau-tram">
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Đa dạng phân khúc từ 400.000₫ đến cao cấp
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-xanh-la font-bold">✓</span> Có combo hoa kèm nến thơm & quà tặng
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DANH MỤC SẢN PHẨM HOA TƯƠI (PRODUCT CATALOG ĐÃ CẬP NHẬT ĐẦY ĐỦ ẢNH & NỘI DUNG)
+  ======================================================== -->
+  <section id="products-section" class="py-16 bg-hong-sua-subtle border-y border-hong-sua-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-wider text-nau-tram bg-hong-sua px-3 py-1 rounded-full border border-hong-sua-border">Tuyển Tập Hoa Tươi Mới Nhất</span>
+          <h2 class="text-3xl font-extrabold text-nau-tram mt-2">Danh Mục Hoa Tươi Bloom</h2>
+          <p class="text-sm text-nau-tram-light mt-1">Chọn bó hoa bạn yêu thích hoặc lọc theo loại hoa bạn đang tìm kiếm.</p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="flex flex-wrap gap-2 text-xs sm:text-sm" id="category-filters">
+          <button class="filter-btn active px-4 py-2 rounded-full font-medium transition-all bg-xanh-la text-white shadow-sm" data-category="all">
+            Tất Cả Hoa
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full font-medium transition-all bg-white text-nau-tram border border-hong-sua-border hover:bg-hong-sua" data-category="rose">
+            Hoa Hồng
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full font-medium transition-all bg-white text-nau-tram border border-hong-sua-border hover:bg-hong-sua" data-category="tulip">
+            Hoa Tulip
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full font-medium transition-all bg-white text-nau-tram border border-hong-sua-border hover:bg-hong-sua" data-category="sunflower">
+            Hướng Dương
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full font-medium transition-all bg-white text-nau-tram border border-hong-sua-border hover:bg-hong-sua" data-category="special">
+            Ly Trắng & Sen
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-full font-medium transition-all bg-white text-nau-tram border border-hong-sua-border hover:bg-hong-sua" data-category="combo">
+            Phi Yến, Tiền & Nến
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID (8 SẢN PHẨM CẬP NHẬT CHÍNH XÁC FILE ẢNH & THÔNG TIN THEO YÊU CẦU) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7" id="product-grid">
+
+        <!-- SẢN PHẨM 1: HOA HỒNG ĐỎ (Thay hình 'hồng đỏ.jpg', đổi tên thành Hoa Hồng Đỏ) -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="rose">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: hồng đỏ.jpg -->
+            <img 
+              src="./hồng đỏ.jpg" 
+              alt="Hoa Hồng Đỏ Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-hong-sua-dam text-nau-tram text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+              Hoa Hồng Bán Chạy
+            </span>
+            <span class="absolute top-3 right-3 bg-xanh-la text-white text-[11px] font-bold px-2 py-0.5 rounded-md">
+              -15%
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Tình Yêu & Say Đắm</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Hoa Hồng Đỏ
+              </h3>
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Những đóa hoa hồng đỏ nhung thắm rực rỡ, biểu trưng cho tình yêu nồng nàn và son sắt. Phối cùng cành lá bạc cao cấp, gói giấy thanh lịch.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">550.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">650.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(1, 'Hoa Hồng Đỏ', 550000, './hồng đỏ.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(1)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 2: TULIP (Thay hình 'tulip.jpg') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="tulip">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: tulip.jpg -->
+            <img 
+              src="./tulip.jpg" 
+              alt="Hoa Tulip Hà Lan Loại 1 Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-white text-nau-tram text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-hong-sua-border">
+              Tulip Hà Lan Loại 1
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Sinh Nhật & Tri Kỷ</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Tulip "Bình Minh Ấm Áp"
+              </h3>
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Cành hoa tulip Hà Lan căng mọng, cánh hoa khép nép duyên dáng, gửi gắm lời chúc về một khởi đầu tươi sáng và niềm vui trọn vẹn.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">680.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">750.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(2, 'Bó Tulip Bình Minh Ấm Áp', 680000, './tulip.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(2)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 3: HƯỚNG DƯƠNG (Thay hình 'hướng dương.jpg') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="sunflower">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: hướng dương.jpg -->
+            <img 
+              src="./hướng dương.jpg" 
+              alt="Bó Hoa Hướng Dương Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-champagne text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+              Tốt Nghiệp & Chúc Mừng
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Tươi Vui & Rực Rỡ</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Hoa "Nắng Hạ Tinh Khôi"
+              </h3>
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Những bông hướng dương rực rỡ đón ánh mặt trời, tượng trưng cho ý chí vươn lên mạnh mẽ và tương lai tươi sáng, ngập tràn hy vọng.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">480.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">550.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(3, 'Bó Hoa Nắng Hạ Tinh Khôi', 480000, './hướng dương.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(3)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 4: HOA LY TRẮNG (Thay hình 'hoa ly trắng.jpg', đổi nhãn thành 'Trong Sáng & Thuần Khiết') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="special">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: hoa ly trắng.jpg -->
+            <img 
+              src="./hoa ly trắng.jpg" 
+              alt="Bó Hoa Ly Trắng Tinh Khôi Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <!-- Đổi 'nhẹ nhàng & lãng mạn' thành 'Trong Sáng & Thuần Khiết' -->
+            <span class="absolute top-3 left-3 bg-hong-sua-dam text-nau-tram text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-white">
+              Trong Sáng & Thuần Khiết
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Thanh Cao & Trang Nhã</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Hoa "Ly Trắng Tinh Khôi"
+              </h3>
+              <!-- Nội dung cập nhật phù hợp với Hoa Ly Trắng -->
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Những cành hoa ly trắng bung nở tỏa ngát hương thơm dịu nhẹ, biểu trưng cho sự thuần khiết, thanh tao và lời chúc bình an, phúc lộc viên mãn.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">490.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">560.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(4, 'Bó Hoa Ly Trắng Tinh Khôi', 490000, './hoa ly trắng.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(4)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 5: HOA SEN (Thay hình 'sen.jpg', nhãn 'Tri Ân & Biết Ơn') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="special">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: sen.jpg -->
+            <img 
+              src="./sen.jpg" 
+              alt="Bó Hoa Sen Thanh Tao Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-xanh-la-light text-xanh-la-dark text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-xanh-la/20">
+              Tri Ân & Biết Ơn
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Thanh Tịnh & An Nhiên</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Hoa Sen "Bình An & Thanh Tao"
+              </h3>
+              <!-- Nội dung cập nhật phù hợp với Hoa Sen -->
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Hoa sen bách diệp gấp cánh nghệ thuật phối cùng đài sen non xanh mát, mang vẻ đẹp bình dị, thuần khiết và thể hiện sự tôn kính, tri ân sâu sắc.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">620.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">700.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(5, 'Bó Hoa Sen Bình An & Thanh Tao', 620000, './sen.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(5)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 6: TIỀN / HOA ĐỒNG TIỀN (Thay hình 'tiền.jpg', nhãn 'May Mắn & Tài Lộc') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="combo">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: tiền.jpg -->
+            <img 
+              src="./tiền.jpg" 
+              alt="Bó Hoa Tài Lộc May Mắn Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-hong-sua-dam text-nau-tram text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+              May Mắn & Tài Lộc
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Khai Trương & Thịnh Vượng</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Hoa "Tài Lộc & Hân Hoan"
+              </h3>
+              <!-- Nội dung cập nhật phù hợp với Hoa Tiền / Tài Lộc -->
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Bó hoa thiết kế tài lộc phối hoa tươi hiện đại cùng điểm xuyết sang trọng, gửi gắm trọn vẹn lời chúc phát tài, công danh thuận lợi và vạn sự cát tường.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">450.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">520.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(6, 'Bó Hoa Tài Lộc & Hân Hoan', 450000, './tiền.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(6)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 7: PHI YẾN (Thay hình 'yến.jpg', nhãn 'Thiết Kế Độc Bản') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="combo">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: yến.jpg -->
+            <img 
+              src="./yến.jpg" 
+              alt="Bó Hoa Phi Yến Độc Bản Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-xanh-la text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+              Thiết Kế Độc Bản
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Dành Riêng Cho Người Thương</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Bó Hoa Phi Yến "Vũ Điệu Biển Xanh"
+              </h3>
+              <!-- Nội dung cập nhật phù hợp với Hoa Yến -->
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Dáng hoa phi yến thanh thoát vươn cao với sắc lam tím diệu kỳ, kết hợp hoa phụ tinh khôi tạo nên bản giao hưởng nghệ thuật bay bổng và đầy cá tính.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">720.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">850.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(7, 'Bó Hoa Phi Yến Vũ Điệu Biển Xanh', 720000, './yến.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(7)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SẢN PHẨM 8: NẾN & HOA (Thay hình 'nến.jpg', nhãn 'Combo Quà Trọn Gói') -->
+        <div class="product-card bg-white rounded-3xl overflow-hidden border border-hong-sua-border shadow-soft hover:shadow-hover transition-all duration-300 flex flex-col justify-between group" data-category="combo">
+          <div class="relative overflow-hidden aspect-[4/5] bg-hong-sua">
+            <!-- Hình trong thư mục: nến.jpg -->
+            <img 
+              src="./nến.jpg" 
+              alt="Combo Quà Hoa Và Nến Thơm Bloom Flower Shop" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-champagne text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+              Combo Quà Trọn Gói
+            </span>
+            <span class="absolute top-3 right-3 bg-hong-sua-dam text-nau-tram text-[11px] font-bold px-2 py-0.5 rounded-md">
+              Tiết kiệm 160k
+            </span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-nau-tram-light font-semibold">Sinh Nhật & Cầu Hôn</span>
+              <h3 class="font-bold text-base text-nau-tram group-hover:text-xanh-la transition-colors mt-0.5">
+                Combo Quà "Hoa & Nến Thơm"
+              </h3>
+              <!-- Nội dung cập nhật phù hợp với Hoa & Nến -->
+              <p class="text-xs text-nau-tram-light mt-1.5 line-clamp-2">
+                Gồm 01 bó hoa thiết kế trang nhã + 01 hũ nến thơm hữu cơ chiết xuất hoa cỏ thư giãn + Thiệp dập nổi chữ vàng sang trọng. Món quà ấm áp đong đầy cảm xúc.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-hong-sua">
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-lg font-black text-xanh-la-dark">890.000₫</span>
+                <span class="text-xs text-nau-tram-light line-through">1.050.000₫</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="addToCart(8, 'Combo Quà Hoa & Nến Thơm', 890000, './nến.jpg')" class="py-2 px-3 bg-xanh-la text-white text-xs font-medium rounded-xl hover:bg-xanh-la-dark transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span>+ Giỏ Hàng</span>
+                </button>
+                <button onclick="openProductQuickView(8)" class="py-2 px-3 bg-hong-sua border border-hong-sua-border text-nau-tram text-xs font-medium rounded-xl hover:bg-hong-sua-medium transition-colors">
+                  Xem Chi Tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Gợi ý hỗ trợ cắm hoa theo ngân sách riêng -->
+      <div class="mt-12 text-center p-6 bg-white rounded-2xl border border-dashed border-hong-sua-border max-w-2xl mx-auto shadow-sm">
+        <p class="text-sm text-nau-tram font-medium">
+          Bạn muốn phối màu hoa theo sở thích hoặc thiết kế theo ngân sách riêng?
+        </p>
+        <p class="text-xs text-nau-tram-light mt-1">
+          Đội ngũ florist của Bloom Flower Shop luôn sẵn sàng lắng nghe và gửi mẫu phác thảo cho bạn trong 10 phút.
+        </p>
+        <button onclick="openCustomOrderModal()" class="mt-3 inline-flex items-center gap-2 text-xs font-bold text-xanh-la-dark hover:underline">
+          <span>Nhắn tin tư vấn mẫu hoa riêng ngay</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. OFFER & PRICE (BANNER ƯU ĐÃI - ĐỔI MUA SHOPEE THÀNH MUA TRÊN FACEBOOK)
+  ======================================================== -->
+  <section id="offer-section" class="py-16 relative overflow-hidden bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <div class="bg-gradient-to-br from-hong-sua to-white rounded-3xl border-2 border-hong-sua-border p-8 sm:p-12 shadow-hover relative overflow-hidden">
+        
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-hong-sua-dam/20 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Cột nội dung Ưu Đãi (7 COLS) -->
+          <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-hong-sua-dam text-nau-tram text-xs font-bold rounded-full">
+              <span>🎁 ĐẶC QUYỀN TRẢI NGHIỆM ĐẶT HOA</span>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-nau-tram leading-tight">
+              Nhận Ngay Ưu Đãi <span class="text-xanh-la">Giảm 10%</span> & Miễn Phí Vận Chuyển Cho Đơn Đặt Trước
+            </h2>
+
+            <p class="text-sm text-nau-tram-light leading-relaxed">
+              Áp dụng cho mọi đơn hàng hoa tươi từ <strong>500.000₫</strong> khi đặt trước tối thiểu 1 ngày hoặc đặt trực tiếp qua website. Bloom cam kết giữ nguyên mức giá niêm yết minh bạch, không phụ thu bất ngờ.
+            </p>
+
+            <!-- Khung Mã Giảm Giá & Nút Copy 1 Chạm -->
+            <div class="inline-flex flex-col sm:flex-row items-center gap-3 p-2 bg-white rounded-2xl border border-hong-sua-border shadow-sm">
+              <div class="px-4 py-2 text-center sm:text-left">
+                <span class="block text-[10px] uppercase font-bold text-nau-tram-light">Mã giảm giá trực tiếp:</span>
+                <span id="voucher-code" class="text-lg font-black tracking-widest text-xanh-la-dark">BLOOM10</span>
+              </div>
+              <button onclick="copyVoucherCode()" class="w-full sm:w-auto px-5 py-2.5 bg-xanh-la text-white text-xs font-bold rounded-xl hover:bg-xanh-la-dark transition-all flex items-center justify-center gap-1.5 shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                <span>Sao Chép Mã</span>
+              </button>
+            </div>
+
+            <!-- Điều kiện áp dụng minh bạch -->
+            <p class="text-xs text-nau-tram-light italic">
+              * Điều kiện: Áp dụng cho các bó hoa trong danh mục, không cộng gộp với các chương trình khuyến mãi khác.
+            </p>
+
+            <!-- CÁC LỰA CHỌN MUA HÀNG ĐA KÊNH: WEB, FACEBOOK (ĐÃ ĐỔI TỪ SHOPEE), TIKTOK SHOP -->
+            <div class="pt-2">
+              <span class="block text-xs font-bold text-nau-tram mb-3">LỰA CHỌN KÊNH MUA HÀNG TIỆN LỢI CHO BẠN:</span>
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                
+                <!-- Nút Đặt hoa trực tiếp -->
+                <a href="#products-section" class="px-5 py-3 bg-xanh-la text-white text-xs sm:text-sm font-bold rounded-full hover:bg-xanh-la-dark shadow-md transition-all flex items-center gap-2">
+                  <span>Đặt Trực Tiếp Trên Web</span>
+                  <span class="bg-white/20 text-[10px] px-2 py-0.5 rounded-full">Tiện nhất</span>
+                </a>
+
+                <!-- Đổi chữ 'Mua Trên Shopee' thành 'Mua Trên Facebook' theo yêu cầu -->
+                <a href="https://www.facebook.com/share/1CngHqxkvD/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="px-5 py-3 bg-[#1877F2] text-white text-xs sm:text-sm font-bold rounded-full hover:bg-blue-700 shadow-sm transition-all flex items-center gap-2" title="Ghé thăm Fanpage Facebook của Bloom Flower Shop">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Mua Trên Facebook</span>
+                </a>
+
+                <!-- Nút TikTok Shop -->
+                <a href="https://www.tiktok.com/@tiemhoabloom_?_r=1&_t=ZS-9AjHXBlMNCm" target="_blank" rel="noopener noreferrer" class="px-5 py-3 bg-slate-900 text-white text-xs sm:text-sm font-bold rounded-full hover:bg-black shadow-sm transition-all flex items-center gap-2" title="Kênh TikTok Shop chính thức của Bloom Flower Shop">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.48 2.78 1.34-.05 2.56-.99 2.89-2.28.14-.52.19-1.07.18-1.61V.02z"/></svg>
+                  <span>Mua Trên TikTok Shop</span>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Cột Đồng hồ đếm ngược trực quan -->
+          <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-hong-sua-border shadow-soft text-center">
+            <span class="text-xs uppercase font-bold tracking-wider text-nau-tram-light">Thời Gian Áp Dụng Chương Trình Còn:</span>
+            
+            <div class="grid grid-cols-4 gap-2 my-4 text-nau-tram" id="countdown-timer">
+              <div class="bg-hong-sua p-2.5 rounded-2xl border border-hong-sua-border">
+                <span id="hours-val" class="text-2xl font-black text-xanh-la-dark">08</span>
+                <span class="block text-[10px] text-nau-tram-light uppercase font-semibold">Giờ</span>
+              </div>
+              <div class="bg-hong-sua p-2.5 rounded-2xl border border-hong-sua-border">
+                <span id="minutes-val" class="text-2xl font-black text-xanh-la-dark">42</span>
+                <span class="block text-[10px] text-nau-tram-light uppercase font-semibold">Phút</span>
+              </div>
+              <div class="bg-hong-sua p-2.5 rounded-2xl border border-hong-sua-border">
+                <span id="seconds-val" class="text-2xl font-black text-xanh-la-dark">19</span>
+                <span class="block text-[10px] text-nau-tram-light uppercase font-semibold">Giây</span>
+              </div>
+              <div class="bg-hong-sua p-2.5 rounded-2xl border border-hong-sua-border">
+                <span class="text-2xl font-black text-champagne">15</span>
+                <span class="block text-[10px] text-nau-tram-light uppercase font-semibold">Bó ưu đãi</span>
+              </div>
+            </div>
+
+            <div class="p-3 bg-hong-sua rounded-xl text-xs text-nau-tram font-medium flex items-center justify-center gap-2 border border-hong-sua-border">
+              <svg class="w-4 h-4 flex-shrink-0 text-xanh-la" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Cam kết giá thật – Dịch vụ chuẩn – Không tăng giá đột xuất</span>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-hong-sua flex items-center justify-center gap-3 text-xs text-nau-tram-light">
+              <img src="./logo cửa hàng.png" alt="Logo Bloom" class="w-7 h-7 rounded-full bg-[#0c4333] object-cover border border-champagne">
+              <span>Bảo chứng chất lượng từ <strong>Bloom Flower Shop</strong></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. FOOTER & TRUST (ĐÃ ĐỔI HOTLINE, ĐỊA CHỈ & XÓA BIỂU TƯỢNG Sh)
+  ======================================================== -->
+  <footer id="faq-trust" class="bg-hong-sua-subtle text-nau-tram pt-16 pb-8 border-t border-hong-sua-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- TOP FOOTER: BRAND & CHÍNH SÁCH MINH BẠCH (4 CỘT) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-hong-sua-border">
+        
+        <!-- Cột 1: Thông tin thương hiệu Bloom Flower Shop (4 COLS) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-champagne bg-[#0c4333] flex-shrink-0 shadow-sm">
+              <img src="./logo cửa hàng.png" alt="Bloom Flower Shop" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="font-bold text-lg text-nau-tram uppercase tracking-tight block">Bloom Flower Shop</span>
+              <span class="text-xs text-xanh-la font-medium">Tiệm hoa tươi thiết kế & Quà tặng tinh tế</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-nau-tram-light leading-relaxed">
+            Bloom Flower Shop ra đời với sứ mệnh mang vẻ đẹp mộc mạc và sự thanh lịch của hoa tươi vào đời sống thường nhật. Chúng tôi tôn trọng từng cảm xúc bạn muốn trao gửi và trân quý từng nhành hoa trao đi.
+          </p>
+
+          <!-- Kênh liên kết Mạng xã hội: ĐÃ XÓA BIỂU TƯỢNG TRÒN CÓ CHỮ 'Sh' THEO YÊU CẦU -->
+          <div class="pt-2">
+            <span class="block text-xs font-bold text-nau-tram mb-2">THEO DÕI & MUA SẮM:</span>
+            <div class="flex items-center gap-2.5">
+              <a href="https://www.facebook.com/share/1CngHqxkvD/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white border border-hong-sua-border flex items-center justify-center hover:bg-xanh-la hover:text-white transition-colors" title="Facebook Bloom Flower Shop">
+                <span class="text-xs font-bold">Fb</span>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white border border-hong-sua-border flex items-center justify-center hover:bg-xanh-la hover:text-white transition-colors" title="Instagram Bloom Flower Shop">
+                <span class="text-xs font-bold">Ig</span>
+              </a>
+              <a href="https://www.tiktok.com/@tiemhoabloom_?_r=1&_t=ZS-9AjHXBlMNCm" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white border border-hong-sua-border flex items-center justify-center hover:bg-xanh-la hover:text-white transition-colors" title="TikTok Bloom Flower Shop">
+                <span class="text-xs font-bold">Tk</span>
+              </a>
+              <!-- Biểu tượng Sh (Shopee) đã được xóa bỏ hoàn toàn -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột 2: Chính sách giao hàng thực tế (3 COLS) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h3 class="font-bold text-sm text-nau-tram uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-1.5 h-3.5 bg-xanh-la rounded-full"></span>
+            <span>Chính Sách Giao Hàng</span>
+          </h3>
+          <ul class="space-y-2 text-xs text-nau-tram-light leading-relaxed">
+            <li>
+              <!-- Viết CAPSLOCK GIAO HỎA TỐC 2H NỘI THÀNH -->
+              <strong class="text-nau-tram">Thời gian giao:</strong> GIAO HỎA TỐC 2H NỘI THÀNH hoặc theo đúng khung giờ hẹn trước của khách.
+            </li>
+            <li>
+              <strong class="text-nau-tram">Xác nhận mẫu:</strong> Khách hàng luôn được nhận ảnh chụp bó hoa thực tế trước khi nhân viên giao hàng xuất phát.
+            </li>
+            <li>
+              <strong class="text-nau-tram">Bảo quản di chuyển:</strong> Bọc xốp ẩm giữ nước ở cuống hoa, túi chống va đập và che chắn gió trong suốt lộ trình.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Chính sách đổi trả & Xử lý khiếu nại (3 COLS) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h3 class="font-bold text-sm text-nau-tram uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-1.5 h-3.5 bg-hong-sua-dam rounded-full"></span>
+            <span>Xử Lý Đổi Trả & Khiếu Nại</span>
+          </h3>
+          <ul class="space-y-2 text-xs text-nau-tram-light leading-relaxed">
+            <li>
+              <strong class="text-nau-tram">Hoa dập hỏng do vận chuyển:</strong> Đổi mới ngay lập tức hoặc cắm bù bó mới nếu phát hiện lỗi hư hỏng lúc nhận hoa (báo trong vòng 2 giờ kèm ảnh/video).
+            </li>
+            <li>
+              <strong class="text-nau-tram">Sai khác mẫu:</strong> Hoàn tiền hoặc đổi sản phẩm tương đương nếu chất lượng hoa không đúng mẫu đã chụp xác nhận.
+            </li>
+            <li>
+              <strong class="text-nau-tram">Lưu ý đặc tính:</strong> Vì là hoa tươi tự nhiên, không áp dụng trả hàng hoàn tiền sau khi khách đã nhận và bảo quản quá 12 giờ.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Kênh Liên Hệ Hỗ Trợ - ĐÃ CẬP NHẬT HOTLINE & ĐỊA CHỈ MỚI CHÍNH XÁC (2 COLS) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h3 class="font-bold text-sm text-nau-tram uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-1.5 h-3.5 bg-champagne rounded-full"></span>
+            <span>Hỗ Trợ Nhanh</span>
+          </h3>
+          <div class="space-y-2 text-xs text-nau-tram-light">
+            <p>
+              <strong class="text-nau-tram block">Hotline / Zalo đặt hoa:</strong>
+              <!-- Đổi hotline thành 0938385663 theo yêu cầu -->
+              <a href="tel:0938385663" class="text-xanh-la-dark font-bold hover:underline text-sm">0938385663</a>
+            </p>
+            <p>
+              <strong class="text-nau-tram block">Địa chỉ tiệm:</strong>
+              <!-- Đổi địa chỉ thành số 10 Huỳnh Văn Nghệ, phường Trấn Biên, thành phố Đồng Nai theo yêu cầu -->
+              <span class="text-nau-tram leading-relaxed">Số 10 Huỳnh Văn Nghệ, phường Trấn Biên, thành phố Đồng Nai</span>
+            </p>
+            <p>
+              <strong class="text-nau-tram block">Giờ mở cửa:</strong>
+              <span>07:00 – 21:30 hàng ngày</span>
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <span class="block text-[10px] font-bold text-nau-tram uppercase mb-1">Thanh toán an toàn:</span>
+            <div class="flex flex-wrap gap-1 text-[10px] text-nau-tram font-medium">
+              <span class="px-2 py-0.5 bg-white rounded border border-hong-sua-border">Chuyển khoản QR</span>
+              <span class="px-2 py-0.5 bg-white rounded border border-hong-sua-border">Tiền mặt (COD)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM FOOTER -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-nau-tram-light">
+        <p>© Bloom Flower Shop. All rights reserved.</p>
+        <p class="flex items-center gap-1 text-center sm:text-right">
+          <span>Gói trọn yêu thương, gửi trao cảm xúc</span>
+          <span>•</span>
+          <a href="#hero" class="text-xanh-la hover:underline">Về đầu trang ↑</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MODAL: GIỎ HÀNG THÔNG MINH (CART DRAWER)
+  ======================================================== -->
+  <div id="cart-drawer-backdrop" class="fixed inset-0 bg-nau-tram/50 backdrop-blur-sm z-50 hidden transition-opacity duration-300">
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-hong-sua-border">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-xanh-la" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <h3 class="font-bold text-lg text-nau-tram">Giỏ Hoa Của Bạn</h3>
+        </div>
+        <button onclick="closeCart()" class="p-2 text-nau-tram-light hover:text-nau-tram rounded-full hover:bg-hong-sua">
+          ✕
+        </button>
+      </div>
+
+      <!-- Thanh tiến độ Miễn Phí Vận Chuyển -->
+      <div class="my-3 p-3 bg-hong-sua rounded-xl text-xs border border-hong-sua-border">
+        <div class="flex justify-between font-medium text-nau-tram mb-1">
+          <span id="shipping-progress-text">Thêm 500.000₫ để nhận Freeship</span>
+          <span id="shipping-percent">0%</span>
+        </div>
+        <div class="w-full bg-white h-2 rounded-full overflow-hidden border border-hong-sua-border">
+          <div id="shipping-progress-bar" class="bg-xanh-la h-full w-0 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <!-- Danh sách sản phẩm trong giỏ -->
+      <div id="cart-items-container" class="flex-grow overflow-y-auto space-y-3 py-2 pr-1">
+        <div id="empty-cart-msg" class="text-center py-12 text-nau-tram-light">
+          <span class="text-4xl block mb-2">🌸</span>
+          <p class="text-sm">Giỏ hoa hiện đang trống.</p>
+          <a href="#products-section" onclick="closeCart()" class="inline-block mt-3 text-xs font-bold text-xanh-la underline">Khám phá các bó hoa xinh ngay</a>
+        </div>
+      </div>
+
+      <!-- Cart Footer & Checkout -->
+      <div class="pt-4 border-t border-hong-sua-border space-y-3">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-nau-tram-light">Tạm tính:</span>
+          <span id="cart-subtotal" class="font-bold text-lg text-nau-tram">0₫</span>
+        </div>
+
+        <p class="text-[11px] text-nau-tram-light italic">
+          * Đã bao gồm thiệp viết tay & túi dưỡng hoa tươi.
+        </p>
+
+        <button onclick="proceedToCheckout()" id="checkout-btn" disabled class="w-full py-3.5 bg-xanh-la text-white font-bold rounded-2xl hover:bg-xanh-la-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md text-sm flex items-center justify-center gap-2">
+          <span>Tiến Hành Đặt Hoa</span>
+          <span>→</span>
+        </button>
+
+        <button onclick="closeCart()" class="w-full py-2 text-xs font-medium text-nau-tram hover:underline">
+          Tiếp tục chọn thêm hoa
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: CHI TIẾT SẢN PHẨM & ĐẶT NHANH (QUICK VIEW)
+  ======================================================== -->
+  <div id="quickview-modal" class="fixed inset-0 bg-nau-tram/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl border border-hong-sua-border relative">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 text-nau-tram font-bold flex items-center justify-center hover:bg-hong-sua transition-colors shadow">
+        ✕
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="h-64 md:h-auto bg-hong-sua relative overflow-hidden">
+          <img id="modal-img" src="" alt="Hoa tươi Bloom" class="w-full h-full object-cover">
+        </div>
+
+        <div class="p-6 md:p-8 flex flex-col justify-between">
+          <div>
+            <span id="modal-tag" class="text-xs uppercase font-bold tracking-wider text-xanh-la">Hoa tươi tuyển chọn</span>
+            <h3 id="modal-title" class="text-xl font-bold text-nau-tram mt-1">Tên sản phẩm</h3>
+            <div class="flex items-baseline gap-2 my-2">
+              <span id="modal-price" class="text-2xl font-black text-xanh-la-dark">0₫</span>
+              <span class="text-xs text-nau-tram-light">Đã bao gồm thiệp & túi dưỡng hoa</span>
+            </div>
+
+            <p id="modal-desc" class="text-xs text-nau-tram-light leading-relaxed my-3">
+              Mô tả chi tiết sản phẩm.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-nau-tram my-4 bg-hong-sua p-3 rounded-xl border border-hong-sua-border">
+              <div class="flex items-center gap-2">
+                <span class="text-xanh-la font-bold">✔</span> <span>Hoa tươi cắt mới trong ngày</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xanh-la font-bold">✔</span> <span class="font-bold">GIAO HỎA TỐC 2H NỘI THÀNH</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xanh-la font-bold">✔</span> <span>Chụp ảnh xác nhận trước khi giao</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <button id="modal-add-btn" class="w-full py-3 bg-xanh-la text-white font-bold rounded-xl hover:bg-xanh-la-dark transition-colors text-sm shadow">
+              Thêm Vào Giỏ Hoa Này
+            </button>
+            <div class="grid grid-cols-2 gap-2 text-center text-xs">
+              <!-- Đổi Shopee thành Facebook -->
+              <a href="https://www.facebook.com/share/1CngHqxkvD/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="py-2.5 bg-blue-100 text-blue-800 rounded-xl font-bold hover:bg-blue-200 transition-colors">
+                Mua qua Facebook
+              </a>
+              <a href="https://www.tiktok.com/@tiemhoabloom_?_r=1&_t=ZS-9AjHXBlMNCm" target="_blank" rel="noopener noreferrer" class="py-2.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-black transition-colors">
+                Mua qua TikTok
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: FORM THÔNG TIN ĐẶT HOA & VIẾT THIỆP (CHECKOUT)
+  ======================================================== -->
+  <div id="checkout-modal" class="fixed inset-0 bg-nau-tram/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border border-hong-sua-border relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-hong-sua text-nau-tram font-bold flex items-center justify-center hover:bg-hong-sua-medium">
+        ✕
+      </button>
+
+      <div class="text-center mb-6">
+        <span class="text-xs uppercase font-bold tracking-wider text-xanh-la">Thông Tin Đơn Hàng</span>
+        <h3 class="text-xl font-bold text-nau-tram mt-1">Xác Nhận Đặt Hoa Bloom</h3>
+        <p class="text-xs text-nau-tram-light mt-0.5">Florist của tiệm sẽ liên hệ xác nhận đơn trong 10 phút.</p>
+      </div>
+
+      <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4 text-xs text-nau-tram">
+        <div>
+          <label class="block font-bold mb-1">Họ và tên người đặt *</label>
+          <input type="text" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold mb-1">Số điện thoại liên hệ *</label>
+            <input type="tel" required placeholder="09xxxxxxxx" class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+          </div>
+          <div>
+            <label class="block font-bold mb-1">Ngày & giờ mong muốn nhận *</label>
+            <input type="text" required placeholder="Ví dụ: 14:00 Ngày mai" class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold mb-1">Địa chỉ giao hoa chi tiết *</label>
+          <input type="text" required placeholder="Số nhà, tên đường, phường/quận..." class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+        </div>
+
+        <div>
+          <label class="block font-bold mb-1">Lời nhắn viết lên thiệp tặng (Miễn phí)</label>
+          <textarea rows="2" placeholder="Ví dụ: Chúc mừng sinh nhật em yêu! Mong em luôn rạng rỡ và an vui..." class="w-full px-3.5 py-2 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-bold mb-1">Phương thức thanh toán</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center gap-2 p-2.5 bg-hong-sua rounded-xl border border-hong-sua-border cursor-pointer">
+              <input type="radio" name="payment" value="qr" checked class="text-xanh-la">
+              <span>Chuyển khoản QR</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 bg-hong-sua rounded-xl border border-hong-sua-border cursor-pointer">
+              <input type="radio" name="payment" value="cod" class="text-xanh-la">
+              <span>Tiền mặt khi nhận</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-3">
+          <button type="submit" class="w-full py-3.5 bg-xanh-la text-white font-bold rounded-2xl hover:bg-xanh-la-dark transition-all text-sm shadow-md">
+            Hoàn Tất Đặt Hoa Ngay
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: TƯ VẤN THIẾT KẾ HOA RIÊNG
+  ======================================================== -->
+  <div id="custom-modal" class="fixed inset-0 bg-nau-tram/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-md w-full rounded-3xl p-6 sm:p-8 shadow-2xl border border-hong-sua-border relative">
+      <button onclick="closeCustomOrderModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-hong-sua text-nau-tram font-bold flex items-center justify-center hover:bg-hong-sua-medium">
+        ✕
+      </button>
+
+      <div class="text-center mb-5">
+        <div class="w-12 h-12 rounded-full bg-hong-sua text-nau-tram flex items-center justify-center mx-auto mb-2 text-xl border border-hong-sua-border">
+          💐
+        </div>
+        <h3 class="text-xl font-bold text-nau-tram">Thiết Kế Hoa Theo Yêu Cầu</h3>
+        <p class="text-xs text-nau-tram-light mt-1">Gửi mong muốn của bạn, chuyên viên florist của Bloom sẽ gợi ý bản phối phù hợp nhất.</p>
+      </div>
+
+      <form onsubmit="handleCustomSubmit(event)" class="space-y-3.5 text-xs text-nau-tram">
+        <div>
+          <label class="block font-bold mb-1">Số điện thoại / Zalo của bạn *</label>
+          <input type="tel" required placeholder="09xxxxxxxx" class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+        </div>
+        <div>
+          <label class="block font-bold mb-1">Ngân sách dự kiến</label>
+          <select class="w-full px-3.5 py-2.5 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm">
+            <option>Từ 500.000₫ - 800.000₫</option>
+            <option>Từ 800.000₫ - 1.500.000₫</option>
+            <option>Trên 1.500.000₫ (Hoa nhập khẩu cao cấp)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-bold mb-1">Dịp tặng & tone màu mong muốn</label>
+          <textarea rows="2" placeholder="Ví dụ: Tặng sinh nhật mẹ, thích tone hoa màu hồng sữa nhã nhặn..." class="w-full px-3.5 py-2 bg-hong-sua rounded-xl border border-hong-sua-border focus:outline-none focus:border-xanh-la text-sm"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-xanh-la text-white font-bold rounded-xl hover:bg-xanh-la-dark transition-all text-sm mt-2">
+          Gửi Yêu Cầu Tư Vấn Ngay
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       TOAST NOTIFICATION (THÔNG BÁO TƯƠNG TÁC)
+  ======================================================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-white text-nau-tram px-4 py-3 rounded-2xl shadow-hover border border-hong-sua-border flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="w-8 h-8 rounded-full bg-hong-sua text-xanh-la flex items-center justify-center font-bold border border-hong-sua-border" id="toast-icon">
+      ✓
+    </div>
+    <div>
+      <h4 class="text-xs font-bold text-nau-tram" id="toast-title">Thông báo</h4>
+      <p class="text-xs text-nau-tram-light" id="toast-msg">Nội dung thông báo</p>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       JAVASCRIPT: DỮ LIỆU SẢN PHẨM & TƯƠNG TÁC
+  ======================================================== -->
+  <script>
+    // Dữ liệu sản phẩm cập nhật chuẩn xác theo các tệp hình ảnh trong thư mục
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: 'Hoa Hồng Đỏ',
+        category: 'rose',
+        price: 550000,
+        oldPrice: 650000,
+        tag: 'Hoa Hồng Bán Chạy',
+        desc: 'Những đóa hoa hồng đỏ nhung thắm rực rỡ, biểu trưng cho tình yêu nồng nàn và son sắt. Phối cùng cành lá bạc cao cấp, gói giấy thanh lịch.',
+        img: './hồng đỏ.jpg'
+      },
+      {
+        id: 2,
+        name: 'Bó Tulip "Bình Minh Ấm Áp"',
+        category: 'tulip',
+        price: 680000,
+        oldPrice: 750000,
+        tag: 'Tulip Hà Lan Loại 1',
+        desc: 'Cành hoa tulip Hà Lan căng mọng, cánh hoa khép nép duyên dáng, gửi gắm lời chúc về một khởi đầu tươi sáng và niềm vui trọn vẹn.',
+        img: './tulip.jpg'
+      },
+      {
+        id: 3,
+        name: 'Bó Hoa "Nắng Hạ Tinh Khôi"',
+        category: 'sunflower',
+        price: 480000,
+        oldPrice: 550000,
+        tag: 'Tốt Nghiệp & Chúc Mừng',
+        desc: 'Những bông hướng dương rực rỡ đón ánh mặt trời, tượng trưng cho ý chí vươn lên mạnh mẽ và tương lai tươi sáng, ngập tràn hy vọng.',
+        img: './hướng dương.jpg'
+      },
+      {
+        id: 4,
+        name: 'Bó Hoa "Ly Trắng Tinh Khôi"',
+        category: 'special',
+        price: 490000,
+        oldPrice: 560000,
+        tag: 'Trong Sáng & Thuần Khiết',
+        desc: 'Những cành hoa ly trắng bung nở tỏa ngát hương thơm dịu nhẹ, biểu trưng cho sự thuần khiết, thanh tao và lời chúc bình an, phúc lộc viên mãn.',
+        img: './hoa ly trắng.jpg'
+      },
+      {
+        id: 5,
+        name: 'Bó Hoa Sen "Bình An & Thanh Tao"',
+        category: 'special',
+        price: 620000,
+        oldPrice: 700000,
+        tag: 'Tri Ân & Biết Ơn',
+        desc: 'Hoa sen bách diệp gấp cánh nghệ thuật phối cùng đài sen non xanh mát, mang vẻ đẹp bình dị, thuần khiết và thể hiện sự tôn kính, tri ân sâu sắc.',
+        img: './sen.jpg'
+      },
+      {
+        id: 6,
+        name: 'Bó Hoa "Tài Lộc & Hân Hoan"',
+        category: 'combo',
+        price: 450000,
+        oldPrice: 520000,
+        tag: 'May Mắn & Tài Lộc',
+        desc: 'Bó hoa thiết kế tài lộc phối hoa tươi hiện đại cùng điểm xuyết sang trọng, gửi gắm trọn vẹn lời chúc phát tài, công danh thuận lợi và vạn sự cát tường.',
+        img: './tiền.jpg'
+      },
+      {
+        id: 7,
+        name: 'Bó Hoa Phi Yến "Vũ Điệu Biển Xanh"',
+        category: 'combo',
+        price: 720000,
+        oldPrice: 850000,
+        tag: 'Thiết Kế Độc Bản',
+        desc: 'Dáng hoa phi yến thanh thoát vươn cao với sắc lam tím diệu kỳ, kết hợp hoa phụ tinh khôi tạo nên bản giao hưởng nghệ thuật bay bổng và đầy cá tính.',
+        img: './yến.jpg'
+      },
+      {
+        id: 8,
+        name: 'Combo Quà "Hoa & Nến Thơm"',
+        category: 'combo',
+        price: 890000,
+        oldPrice: 1050000,
+        tag: 'Combo Quà Trọn Gói',
+        desc: 'Gồm 01 bó hoa thiết kế trang nhã + 01 hũ nến thơm hữu cơ chiết xuất hoa cỏ thư giãn + Thiệp dập nổi chữ vàng sang trọng. Món quà ấm áp đong đầy cảm xúc.',
+        img: './nến.jpg'
+      }
+    ];
+
+    let cart = [];
+
+    // 1. Menu Mobile Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // 2. Lọc Danh Mục Hoa (Category Filter)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-xanh-la', 'text-white');
+          b.classList.add('bg-white', 'text-nau-tram');
+        });
+        btn.classList.add('active', 'bg-xanh-la', 'text-white');
+        btn.classList.remove('bg-white', 'text-nau-tram');
+
+        const cat = btn.getAttribute('data-category');
+
+        productCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Quản Lý Giỏ Hàng
+    const cartBackdrop = document.getElementById('cart-drawer-backdrop');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const cartCounter = document.getElementById('cart-counter');
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const emptyCartMsg = document.getElementById('empty-cart-msg');
+    const cartSubtotalEl = document.getElementById('cart-subtotal');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const shippingProgressBar = document.getElementById('shipping-progress-bar');
+    const shippingProgressText = document.getElementById('shipping-progress-text');
+    const shippingPercent = document.getElementById('shipping-percent');
+
+    openCartBtn.addEventListener('click', openCart);
+    cartBackdrop.addEventListener('click', (e) => {
+      if (e.target === cartBackdrop) closeCart();
+    });
+
+    function openCart() {
+      cartBackdrop.classList.remove('hidden');
+      setTimeout(() => {
+        cartDrawer.classList.remove('translate-x-full');
+      }, 10);
+      renderCart();
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        cartBackdrop.classList.add('hidden');
+      }, 300);
+    }
+
+    function addToCart(id, name, price, img) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price, img, quantity: 1 });
+      }
+      updateCartUI();
+      showToast('Đã thêm vào giỏ', `Đã thêm 1 "${name}" vào giỏ hoa.`);
+    }
+
+    function changeQuantity(id, delta) {
+      const item = cart.find(item => item.id === id);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      updateCartUI();
+      renderCart();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCartUI();
+      renderCart();
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCounter.innerText = totalCount;
+      if (totalCount > 0) {
+        cartCounter.classList.add('scale-125');
+        setTimeout(() => cartCounter.classList.remove('scale-125'), 200);
+      }
+    }
+
+    function formatVND(num) {
+      return num.toLocaleString('vi-VN') + '₫';
+    }
+
+    function renderCart() {
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="text-center py-12 text-nau-tram-light">
+            <span class="text-4xl block mb-2">🌸</span>
+            <p class="text-sm">Giỏ hoa của bạn đang trống.</p>
+            <a href="#products-section" onclick="closeCart()" class="inline-block mt-3 text-xs font-bold text-xanh-la underline">Khám phá các bó hoa xinh ngay</a>
+          </div>
+        `;
+        cartSubtotalEl.innerText = '0₫';
+        checkoutBtn.disabled = true;
+        shippingProgressBar.style.width = '0%';
+        shippingPercent.innerText = '0%';
+        shippingProgressText.innerText = 'Thêm 500.000₫ để nhận Freeship';
+        return;
+      }
+
+      let subtotal = 0;
+      let html = '';
+
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        html += `
+          <div class="flex items-center gap-3 p-3 bg-hong-sua rounded-2xl border border-hong-sua-border">
+            <img src="${item.img}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-grow min-w-0">
+              <h4 class="text-xs font-bold text-nau-tram truncate">${item.name}</h4>
+              <p class="text-xs text-xanh-la-dark font-bold mt-0.5">${formatVND(item.price)}</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 rounded-md bg-white border border-hong-sua-border text-xs font-bold flex items-center justify-center hover:bg-hong-sua">-</button>
+                <span class="text-xs font-semibold px-1">${item.quantity}</span>
+                <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 rounded-md bg-white border border-hong-sua-border text-xs font-bold flex items-center justify-center hover:bg-hong-sua">+</button>
+              </div>
+            </div>
+            <button onclick="removeItem(${item.id})" class="text-nau-tram-light hover:text-red-600 p-1 text-xs" title="Xóa">
+              ✕
+            </button>
+          </div>
+        `;
+      });
+
+      cartItemsContainer.innerHTML = html;
+      cartSubtotalEl.innerText = formatVND(subtotal);
+      checkoutBtn.disabled = false;
+
+      const freeshipTarget = 500000;
+      if (subtotal >= freeshipTarget) {
+        shippingProgressBar.style.width = '100%';
+        shippingPercent.innerText = '100%';
+        shippingProgressText.innerText = '🎉 Đơn hàng đã ĐƯỢC MIỄN PHÍ VẬN CHUYỂN!';
+      } else {
+        const remaining = freeshipTarget - subtotal;
+        const pct = Math.min(100, Math.round((subtotal / freeshipTarget) * 100));
+        shippingProgressBar.style.width = `${pct}%`;
+        shippingPercent.innerText = `${pct}%`;
+        shippingProgressText.innerText = `Thêm ${formatVND(remaining)} để nhận Freeship`;
+      }
+    }
+
+    // 4. Quick View Modal
+    const quickviewModal = document.getElementById('quickview-modal');
+    function openProductQuickView(id) {
+      const prod = PRODUCTS.find(p => p.id === id);
+      if (!prod) return;
+
+      document.getElementById('modal-img').src = prod.img;
+      document.getElementById('modal-title').innerText = prod.name;
+      document.getElementById('modal-tag').innerText = prod.tag;
+      document.getElementById('modal-price').innerText = formatVND(prod.price);
+      document.getElementById('modal-desc').innerText = prod.desc;
+
+      const addBtn = document.getElementById('modal-add-btn');
+      addBtn.onclick = () => {
+        addToCart(prod.id, prod.name, prod.price, prod.img);
+        closeQuickView();
+        openCart();
+      };
+
+      quickviewModal.classList.remove('hidden');
+    }
+
+    function closeQuickView() {
+      quickviewModal.classList.add('hidden');
+    }
+
+    // 5. Checkout Modal Flow
+    const checkoutModal = document.getElementById('checkout-modal');
+    function proceedToCheckout() {
+      closeCart();
+      checkoutModal.classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      checkoutModal.classList.add('hidden');
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      closeCheckoutModal();
+      showToast('Đặt hoa thành công!', 'Bloom đã nhận thông tin. Florist sẽ gọi xác nhận ngay.');
+      cart = [];
+      updateCartUI();
+    }
+
+    // 6. Custom Order Modal
+    const customModal = document.getElementById('custom-modal');
+    function openCustomOrderModal() {
+      customModal.classList.remove('hidden');
+    }
+    function closeCustomOrderModal() {
+      customModal.classList.add('hidden');
+    }
+    function handleCustomSubmit(e) {
+      e.preventDefault();
+      closeCustomOrderModal();
+      showToast('Đã gửi yêu cầu!', 'Bloom sẽ gửi mẫu thiết kế riêng cho bạn qua Zalo trong ít phút.');
+    }
+
+    // 7. Copy Voucher Button
+    function copyVoucherCode() {
+      const code = document.getElementById('voucher-code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Đã sao chép!', `Mã ưu đãi "${code}" đã được lưu vào bộ nhớ tạm.`);
+      }).catch(() => {
+        showToast('Mã ưu đãi: BLOOM10', 'Nhập BLOOM10 tại bước xác nhận đơn hàng.');
+      });
+    }
+
+    // 8. Toast Notification System
+    const toast = document.getElementById('toast');
+    const toastTitle = document.getElementById('toast-title');
+    const toastMsg = document.getElementById('toast-msg');
+    let toastTimeout;
+
+    function showToast(title, message) {
+      clearTimeout(toastTimeout);
+      toastTitle.innerText = title;
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // 9. Countdown Timer
+    function initCountdown() {
+      let seconds = 19;
+      let minutes = 42;
+      let hours = 8;
+
+      setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          seconds = 59;
+          if (minutes > 0) {
+            minutes--;
+          } else {
+            minutes = 59;
+            if (hours > 0) hours--;
+          }
+        }
+
+        const secStr = seconds < 10 ? '0' + seconds : seconds;
+        const minStr = minutes < 10 ? '0' + minutes : minutes;
+        const hrStr = hours < 10 ? '0' + hours : hours;
+
+        const secEl = document.getElementById('seconds-val');
+        const minEl = document.getElementById('minutes-val');
+        const hrEl = document.getElementById('hours-val');
+
+        if (secEl) secEl.innerText = secStr;
+        if (minEl) minEl.innerText = minStr;
+        if (hrEl) hrEl.innerText = hrStr;
+      }, 1000);
+    }
+    initCountdown();
+  </script>
+</body>
+</html>
